@@ -7,23 +7,36 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
+// Name: Justin Meilinger
+// Course: CSC 415
+// Semester: Fall 2015
+// Instructor: Dr. Pulimood
+// Project name: FlashcardCalculator
+// Description: This project allows the user to enter an equation and then solves that equation
+// storing the equation and answer in a flashcard inside of a deck and allow the user to
+// then view and study from said flashcard
+// Filename: showCardsActivity.java
+// Description: This class prompts the user to pick a deck of cards either all cards of just the
+// regular equation cards
+// Last modified on: November 6, 2015
 
 public class showCardsActivity extends ActionBarActivity {
 
+    //onCreate set up the activity on the screen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_cards);
-    }
 
+    }
+    //onCreateOptionsMenu just creates an options menu for the app
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_show_cards, menu);
         return true;
     }
-
+    //onOptionsItemSelected returns true id the action clicked is in the settings
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -39,17 +52,29 @@ public class showCardsActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /*
+    *This method switches activities to show all flashcards
+    * @param view
+    *
+    */
     public void showAllCards(View view) {
         Intent i = new Intent(this, viewCardsActivity.class);
-        i.putExtra("type", "all flashcards");
+        i.putExtra("type", "all");
         startActivity(i);
     }
-
+    /*
+    *This method switches activities to show just the equation flashcards
+    * @param view
+    */
     public void regCards(View v){
         Intent i = new Intent(this, viewCardsActivity.class);
-        i.putExtra("type", "reg flashcards");
+        i.putExtra("type", "reg");
         startActivity(i);
     }
+    /*
+    * This method switched the active page to the equations page which is the MainActivityPage
+    * @param view
+     */
     public void goEquations(View v){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

@@ -17,7 +17,7 @@
         android:autoText="false"
         android:textAlignment="center"
         android:textSize="30dp"
-        android:layout_above="@+id/nextButton"
+        android:layout_above="@+id/flipcardButton"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="83dp" />
 
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Flip card"
-        android:id="@+id/nextButton"
+        android:id="@+id/flipcardButton"
         android:onClick="flipAndSwitchCard"
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/button2"
@@ -56,8 +56,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next card"
-        android:id="@+id/button3"
-        android:layout_alignTop="@+id/nextButton"
+        android:id="@+id/nextButton"
+        android:layout_alignTop="@+id/flipcardButton"
         android:layout_alignRight="@+id/button2"
         android:layout_alignEnd="@+id/button2"
         android:layout_marginRight="37dp"

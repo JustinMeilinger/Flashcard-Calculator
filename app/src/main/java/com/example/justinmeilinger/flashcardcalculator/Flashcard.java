@@ -1,8 +1,17 @@
 package com.example.justinmeilinger.flashcardcalculator;
 
-/**
- * Created by justinmeilinger on 10/31/15.
- */
+// Name: Justin Meilinger
+// Course: CSC 415
+// Semester: Fall 2015
+// Instructor: Dr. Pulimood
+// Project name: FlashcardCalculator
+// Description: This project allows the user to enter an equation and then solves that equation
+// storing the equation and answer in a flashcard inside of a deck and allow the user to
+// then view and study from said flashcard
+// Filename: Flashcard.java
+// Description: this file is the flashcard object that holds the front and back of a flashcard as
+// strings and contains get methods for them
+// Last modified on: November 6, 2015
 public class Flashcard {
     private String front, back;
 

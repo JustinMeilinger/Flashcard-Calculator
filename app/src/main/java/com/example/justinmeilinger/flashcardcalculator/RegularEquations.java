@@ -4,17 +4,41 @@ import android.text.Editable;
 
 import java.util.*;
 
-/**
- * Created by justinmeilinger on 10/31/15.
- */
+// Name: Justin Meilinger
+// Course: CSC 415
+// Semester: Fall 2015
+// Instructor: Dr. Pulimood
+// Project name: FlashcardCalculator
+// Description: This project allows the user to enter an equation and then solves that equation
+// storing the equation and answer in a flashcard inside of a deck and allow the user to
+// then view and study from said flashcard
+// Filename: RegularEquations.java
+// Description: this file contains the main algorithm to parse the string entry into a form that
+// executes the correct function and stores the results into the deck with the other cards
+// Last modified on: November 6, 2015
 
 public class RegularEquations {
     private double answer = 0;
     private String equation;
 
-    //this method takes in a string of an equation and computes the answer and adds it to the deck
-    // of flashcards
-    public double solveProblem(String equation, Deck deck) {
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: solveProblem(String equation)
+    //
+    //    Parameters:
+    //    input String; string of the equation that is sent from the MainActivity class
+    //
+    //    Pre-condition: the string must be a string
+    //    Post-condition: The String is taken and all spaces are taken out of it. If errors occur
+    //            they propagate out of the method to the try catch in the MainActivity's sendInfo
+    //            method. After the spaces are taken out of the string method looks for negatives
+    //            and rewrites them to a readable value. then the method cycles through the equation
+    //            and calculates the multiplication and division first resizing the array in the
+    //            process the program then finally compute the remaining addition and subtraction,
+    //            places the answer in the first position in the array and then adds it to the deck
+    //            as a new flashcard.
+    //-----------------------------------------------------------------------------------------
+    public double solveProblem(String equation) {
         this.equation = equation;
         String[] numbers = new String[20];
         int numSub = 0;
@@ -86,10 +110,21 @@ public class RegularEquations {
             }
         }
         answer =  Double.parseDouble(numbers[0]);
-        deck.addFlashcard(equation, answer);
+        MainActivity.getDeck().addFlashcard(equation, answer);
         return answer;
     }
 
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: shrinkArr(String[] arr)
+    //
+    //    Parameters:
+    //    input String[]; array of the current string numbers and functions
+    //
+    //    Pre-condition: the string[] must have a length of 1
+    //    Post-condition: Takes a String[] and takes all of the nulls inside the array and moves
+    //              them to the end of the array. Returns the resulting array
+    //-----------------------------------------------------------------------------------------
     public String[] shrinkArr(String[] arr){
 
         for(int i = 0; i < arr.length; i++){
@@ -105,7 +140,17 @@ public class RegularEquations {
         }
         return arr;
     }
-
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: formatString(String str)
+    //
+    //    Parameters:
+    //    input String; the original string the solveEquation method is given
+    //
+    //    Pre-condition: non
+    //    Post-condition: cycles through the string and creates a new string that is then split into
+    //              an array of strings that is then returned
+    //-----------------------------------------------------------------------------------------
     public String[] formatString(String str){
         String[] arr;
         int j = 0;
@@ -163,7 +208,16 @@ public class RegularEquations {
     }
 
 
-    //takes null values off the end of the array
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: sendInfo(View v)
+    //
+    //    Parameters:
+    //    input View; current view of the xml screen
+    //
+    //    Pre-condition: The array has null values at the end
+    //    Post-condition: deletes all null values from the array and returns it
+    //-----------------------------------------------------------------------------------------
     public String[] cleanArr(String[] arr){
         //finds the size of the array
         int j = 0;
