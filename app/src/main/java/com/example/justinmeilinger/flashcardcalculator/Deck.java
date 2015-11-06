@@ -23,7 +23,17 @@ public class Deck {
     private Flashcard[] allFlashcards = new Flashcard[100];
     private int allSub = 0;
 
-    //creates and adds the regular flashcards to the regular and 'all' decks
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: addFlashcard(String equation, double answer)
+    //
+    //    Parameters:
+    //    input String; the equation from the solveEquation method
+    //    input double; the answer to the question after being solved in the solveEquation
+    //
+    //    Pre-condition: The solveEquation method must have been run without errors
+    //    Post-condition: The
+    //-----------------------------------------------------------------------------------------
     public void addFlashcard(String equation, double answer){
 
         if(regSub <= 20) {
@@ -36,12 +46,28 @@ public class Deck {
 
     }
 
-    //returns the array of all frashcards
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: getAllFlashcards()
+    //
+    //    Parameters: none
+    //
+    //    Pre-condition: none
+    //    Post-condition: returns a array of all flashcards
+    //-----------------------------------------------------------------------------------------
     public Flashcard[] getAllFlashcards(){
         return allFlashcards;
     }
 
-    //returns the array of the regular equations flashcards
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: getRegFlashcards()
+    //
+    //    Parameters: none
+    //
+    //    Pre-condition: none
+    //    Post-condition: returns an array of only regular flashcards
+    //-----------------------------------------------------------------------------------------
     public Flashcard[] getRegFlashcards(){
         return regFlashcards;
     }

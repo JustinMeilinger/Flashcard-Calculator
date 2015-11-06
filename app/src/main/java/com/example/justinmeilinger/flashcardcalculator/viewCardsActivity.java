@@ -63,15 +63,46 @@ public class viewCardsActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: goEquations(View v)
+    //
+    //    Parameters:
+    //    input View: the current view of the screen
+    //
+    //    Pre-condition: the go to equations button was clicked
+    //    Post-condition: switches activities to the equations screen aka MainActivity
+    //-----------------------------------------------------------------------------------------
     public void goEquations(View v){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: goDeck(View v)
+    //
+    //    Parameters:
+    //    input View: the current view of the screen
+    //
+    //    Pre-condition: the go to deck button was clicked
+    //    Post-condition: switches activity to the choose deck activity
+    //-----------------------------------------------------------------------------------------
     public void goDeck(View v){
         Intent intent = new Intent(this, showCardsActivity.class);
         startActivity(intent);
 
     }
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: flipAndSwitchCard(View v)
+    //
+    //    Parameters:
+    //    input View: the current view of the screen
+    //
+    //    Pre-condition: the flip button was clicked
+    //    Post-condition: try to set the text of the textView to the back of the current flashcard
+    //          if an error occurs show appropriate error message
+    //-----------------------------------------------------------------------------------------
     public void flipAndSwitchCard(View v){
 
         TextView t = (TextView) findViewById(R.id.flashCard);
@@ -85,6 +116,17 @@ public class viewCardsActivity extends ActionBarActivity {
         }
 
     }
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: nextCard(View v)
+    //
+    //    Parameters:
+    //    input View: the current view of the screen
+    //
+    //    Pre-condition: the next button was clicked
+    //    Post-condition: try to set the textView to a the next flashcard's front if there is no
+    //          flashcard set the correct error message
+    //-----------------------------------------------------------------------------------------
     public void nextCard(View v){
         sub++;
         TextView t = (TextView) findViewById(R.id.flashCard);

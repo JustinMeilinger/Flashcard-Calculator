@@ -52,29 +52,48 @@ public class showCardsActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /*
-    *This method switches activities to show all flashcards
-    * @param view
-    *
-    */
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: showAllCards(View v)
+    //
+    //    Parameters:
+    //    input View: the current view of the screen
+    //
+    //    Pre-condition: the all flashcards button was clicked
+    //    Post-condition: switches activities to the flashcard screen passing a string
+    //          value named "type".
+    //-----------------------------------------------------------------------------------------
     public void showAllCards(View view) {
         Intent i = new Intent(this, viewCardsActivity.class);
         i.putExtra("type", "all");
         startActivity(i);
     }
-    /*
-    *This method switches activities to show just the equation flashcards
-    * @param view
-    */
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: regCards(View v)
+    //
+    //    Parameters:
+    //    input View: the current view of the screen
+    //
+    //    Pre-condition: the regular flashcards button was clicked
+    //    Post-condition: switches activities to the flashcard screen passing a string
+    //          value named "type".
+    //-----------------------------------------------------------------------------------------
     public void regCards(View v){
         Intent i = new Intent(this, viewCardsActivity.class);
         i.putExtra("type", "reg");
         startActivity(i);
     }
-    /*
-    * This method switched the active page to the equations page which is the MainActivityPage
-    * @param view
-     */
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: goEquations(View v)
+    //
+    //    Parameters:
+    //    input View: the current view of the screen
+    //
+    //    Pre-condition: the go to equations button was clicked
+    //    Post-condition: switches activities to the equation entry screen aka MainActivity
+    //-----------------------------------------------------------------------------------------
     public void goEquations(View v){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

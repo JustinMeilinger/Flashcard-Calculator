@@ -15,18 +15,44 @@ package com.example.justinmeilinger.flashcardcalculator;
 public class Flashcard {
     private String front, back;
 
-    //Creates a flashcard for equations
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Constructor: Flashcard(String equation, double answer)
+    //
+    //    Parameters:
+    //    input String; the equation from the solveEquation method
+    //    input double; the answer to the question after being solved in the solveEquation
+    //
+    //    Pre-condition: The solveEquation method must have been run without errors
+    //    Post-condition: A new flashcard object is created and ready for display
+    //-----------------------------------------------------------------------------------------
     public Flashcard(String equation, double answer){
         front = equation;
         back = "" + answer;
     }
 
-    //returns the front of the card
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: getFront()
+    //
+    //    Parameters:none
+    //
+    //    Pre-condition: none
+    //    Post-condition: returns a String of the front of the flashcard (the equation side)
+    //-----------------------------------------------------------------------------------------
     public String getFront(){
         return front;
     }
 
-    //returns the back of the card
+    //-----------------------------------------------------------------------------------------
+    //
+    //  Function: getBack()
+    //
+    //    Parameters:none
+    //
+    //    Pre-condition: none
+    //    Post-condition: returns a String of the back of the flashcard (the answer side)
+    //-----------------------------------------------------------------------------------------
     public String getBack(){
         return back;
     }
